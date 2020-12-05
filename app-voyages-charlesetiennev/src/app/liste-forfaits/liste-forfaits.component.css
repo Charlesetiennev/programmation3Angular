@@ -1,0 +1,19 @@
+/* 
+  Liste forfait CSS
+  Par Charles-Etienne Villemure
+  Le 5 Decembre 2020
+*/
+.petitForfait {
+  margin: 2%;
+  background-color: rebeccapurple;
+}
+.mat-grid-tile {
+  background-color: rebeccapurple;
+}
+.grandForfait {
+  display: block;
+}
+.mat-list {
+  padding: 5vh;
+  height: 15vh;
+}

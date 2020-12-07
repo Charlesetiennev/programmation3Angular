@@ -13,4 +13,4 @@ export const CARACTERISTIQUES : string[] =
      'Bar',
      'Buffet',
      'Adulte seulement',
-     'Service en Francais'];
+     'Service en Français'];

@@ -6,7 +6,7 @@ import {Forfait} from './forfait';
 export const FORFAITS: Forfait[]  = [
     {
         destination : 'Punta Cana',
-        villeDeDepart: 'Montreal',
+        villeDeDepart: 'Montréal',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 1200,
@@ -22,7 +22,7 @@ export const FORFAITS: Forfait[]  = [
     },
     {
         destination : 'Costa Rica',
-        villeDeDepart: 'Quebec',
+        villeDeDepart: 'Québec',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 1720,
@@ -38,7 +38,7 @@ export const FORFAITS: Forfait[]  = [
     },
     {
         destination : 'Cuba',
-        villeDeDepart: 'Montreal',
+        villeDeDepart: 'Montréal',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 999,
@@ -49,12 +49,12 @@ export const FORFAITS: Forfait[]  = [
             coordonees: '3969 Deer Haven Drive',
             nombreChambres: 200,
             nombreEtoiles : 1,
-            caracteristiques: ['Miniclub','Buffet','Service en Francais','Dans un lieu situé à proximité d\'un parc/lieu naturel']
+            caracteristiques: ['Miniclub','Buffet','Service en Français','Dans un lieu situé à proximité d\'un parc/lieu naturel']
         }
     },
     {
         destination : 'Colombie',
-        villeDeDepart: 'Quebec',
+        villeDeDepart: 'Québec',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 1000,
@@ -70,7 +70,7 @@ export const FORFAITS: Forfait[]  = [
     },
     {
         destination : 'Venuzuela',
-        villeDeDepart: 'Montreal',
+        villeDeDepart: 'Montréal',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 1440,
@@ -86,7 +86,7 @@ export const FORFAITS: Forfait[]  = [
     },
     {
         destination : 'Chili',
-        villeDeDepart: 'Quebec',
+        villeDeDepart: 'Québec',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 2200,
@@ -102,7 +102,7 @@ export const FORFAITS: Forfait[]  = [
     },
     {
         destination : 'Haiti',
-        villeDeDepart: 'Montreal',
+        villeDeDepart: 'Montréal',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 1175,
@@ -113,12 +113,12 @@ export const FORFAITS: Forfait[]  = [
             coordonees: '3639 Collins Avenue',
             nombreChambres: 200,
             nombreEtoiles : 5,
-            caracteristiques: ['Internet','Dans un lieu situé à proximité d\'un parc/lieu naturel','Ascenseur','Miniclub','Mariages','Service en Francais','Buffet']
+            caracteristiques: ['Internet','Dans un lieu situé à proximité d\'un parc/lieu naturel','Ascenseur','Miniclub','Mariages','Service en Français','Buffet']
         }
     },
     {
         destination : 'Mexique',
-        villeDeDepart: 'Quebec',
+        villeDeDepart: 'Québec',
         dateDeDepart: '2020-11-17',
         dateDeRetour: '2020-11-25',
         prix : 3025,

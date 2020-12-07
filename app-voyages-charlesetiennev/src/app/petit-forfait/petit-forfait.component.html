@@ -7,19 +7,19 @@
     <div class="colone">
         <p class="titre">Destination</p>
             <h3>{{forfait.destination}}</h3>
-        <p class="titre">Hotel</p>
+        <p class="titre">Hôtel</p>
             <h3>{{forfait.hotel.nomHotel}}</h3>
-        <p>nombre d'etoiles : </p>
+        <p>Nombre d'étoiles : </p>
         <div *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
             <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
         </div>
     </div>
     <div class="colone">
-        <p class="titre">Date de depart</p>
+        <p class="titre">Date de départ</p>
             <h3>{{forfait.dateDeDepart}}</h3>
-        <p class="titre">Duree</p>
+        <p class="titre">Durée</p>
             <h3>7 Jours</h3>
-        <p class="titre">Depart de</p>
+        <p class="titre">Départ de</p>
             <h3>{{forfait.villeDeDepart}}</h3>
     </div>    
 </div>

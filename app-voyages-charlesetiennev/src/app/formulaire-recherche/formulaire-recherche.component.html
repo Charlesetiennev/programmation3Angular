@@ -6,14 +6,14 @@
 
 <!-- Date depart -->
 <mat-form-field appearance="fill">
-    <mat-label>Choose a date</mat-label>
+    <mat-label>Choisissez une date</mat-label>
     <input matInput [matDatepicker]="picker">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <!-- Duree -->
 <mat-form-field appearance="fill">
-  <mat-label>Duree du voyages</mat-label>
+  <mat-label>Durée du voyage</mat-label>
   <mat-select>
     <mat-option *ngFor="let dureesejour of dureeSejours" [value]="dureesejour.valeur">
       {{dureesejour.valeurAfficher}}
@@ -23,7 +23,7 @@
 <!-- Etoile -->
 <div class="etoile">
   <div>
-    <p>Nombre(s) etoile(s)</p>
+    <p>Nombre d’étoiles</p>
       <mat-slider
         [(ngModel)]="description"
         (ngModelChange)="change($event)"

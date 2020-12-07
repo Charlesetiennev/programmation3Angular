@@ -8,20 +8,20 @@
         <h3>{{forfait.destination}}</h3>
     </div>
     <div class="colone">
-        <p class="titre">Hotel</p>
+        <p class="titre">Hôtel</p>
             <h3>{{forfait.hotel.nomHotel}}</h3>
-        <p class="titre">Nombres de chambres</p>
+        <p class="titre">Nombre de chambres</p>
             <h3>{{forfait.hotel.nombreChambres}}</h3>
-        <p class="titre">Coordonnes Hotel</p>
+        <p class="titre">Coordonées hôtel</p>
             <h3>{{forfait.hotel.coordonees}}</h3>
     </div>
     <div class="colone">
-        <p>nombre d'etoiles : </p>
+        <p>Nombre d'étoiles : </p>
         <div class="etoiles" *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
             <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
         </div>
     </div>
-    <p class="titre">Depart de</p>
+    <p class="titre">Départ de</p>
         <h3>{{forfait.villeDeDepart}}</h3>
     <div *ngIf="forfait.rabais > 1; then rabais else sansRabais"></div>
         <ng-template #rabais>
@@ -34,13 +34,13 @@
             <p class="titre">Prix</p>
                 <h3>{{forfait.prix}}$</h3>
         </ng-template>
-    <p class="titre">Date de depart</p>
+    <p class="titre">Date de départ</p>
         <h3>{{forfait.dateDeDepart}}</h3>
     <p class="titre">Date de retour</p>
         <h3>{{forfait.dateDeRetour}}</h3>
-    <p class="titre">duree</p>
+    <p class="titre">Durée</p>
         <h3>7 jours</h3>
-    <p class="titre">caracteristiques</p>
+    <p class="titre">Caractéristiques</p>
         <h3>{{forfait.hotel.caracteristiques}}</h3>
 </mat-list-item>
 <mat-divider></mat-divider>

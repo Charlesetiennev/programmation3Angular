@@ -1,0 +1,41 @@
+<div>
+<h1>Allo on va faire une suppression ICI</h1>
+
+
+<table mat-table #tableForfaits [dataSource]="forfaits">
+    <!-- DATE DE DEPART -->
+    <ng-container matColumnDef="dateDepart">
+        <th mat-header-cell *matHeaderCellDef> Date de depart </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.destination}} </td>
+    </ng-container>
+    <!-- DATE DE RETOUR -->
+    <ng-container matColumnDef="dateRetour">
+        <th mat-header-cell *matHeaderCellDef> Date de retour  </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.dateRetour}} </td>
+    </ng-container>
+    <!-- NOM HOTEL -->
+    <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom de l'hotel  </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.hotel.nom}} </td>
+    </ng-container>
+    <!-- PRIX -->
+    <ng-container matColumnDef="prix">
+        <th mat-header-cell *matHeaderCellDef> Prix  </th>
+        <td mat-cell *matCellDef="let forfait"> {{forfait.prix}} </td>
+    </ng-container>
+    <!-- SUPPRESSION -->
+    <ng-container matColumnDef="suppresion">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let forfait">
+            <form (ngSubmit)="onDelete(forfait)"> 
+                <button mat-button ><i class="material-icons">delete</i></button>
+            </form>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+ 
+ </table>
+
+</div>

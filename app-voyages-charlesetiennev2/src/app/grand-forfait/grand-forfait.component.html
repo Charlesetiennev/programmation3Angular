@@ -1,0 +1,46 @@
+<!-- 
+    Grand forfait HTML
+    Par Charles-Etienne Villemure
+    Le 5 Decembre 2020
+ -->
+<mat-list-item [ngClass]="{'favori': forfait.vedette ===true}">
+    <div class="colone">
+        <h3>{{forfait.destination}}</h3>
+    </div>
+    <div class="colone">
+        <p class="titre">Hotel</p>
+            <h3>{{forfait.hotel.nom}}</h3>
+        <p class="titre">Nombres de chambres</p>
+            <h3>{{forfait.hotel.nombreChambres}}</h3>
+        <p class="titre">Coordonnes Hotel</p>
+            <h3>{{forfait.hotel.coordonnees}}</h3>
+    </div>
+    <div class="colone">
+        <p>nombre d'etoiles : </p>
+        <div class="etoiles" *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
+            <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
+        </div>
+    </div>
+    <p class="titre">Depart de</p>
+        <h3>{{forfait.villeDepart}}</h3>
+    <div *ngIf="forfait.rabais > 1; then rabais else sansRabais"></div>
+        <ng-template #rabais>
+            <p class="titre">Prix</p>
+            <p class="rabaisForfait" style="text-decoration: line-through;">{{forfait.prix}} $</p>
+                <h3 class="rabaisForfait"> {{forfait.prix - forfait.rabais}} $</h3>
+            <p class="titre">Rabais de :  {{forfait.rabais}} $</p>
+        </ng-template>
+        <ng-template #sansRabais>  
+            <p class="titre">Prix</p>
+                <h3>{{forfait.prix}}$</h3>
+        </ng-template>
+    <p class="titre">Date de depart</p>
+        <h3>{{forfait.dateDepart}}</h3>
+    <p class="titre">Date de retour</p>
+        <h3>{{forfait.dateRetour}}</h3>
+    <p class="titre">duree</p>
+        <h3>7 jours</h3>
+    <p class="titre">caracteristiques</p>
+        <h3>{{forfait.hotel.caracteristiques}}</h3>
+</mat-list-item>
+<mat-divider></mat-divider>

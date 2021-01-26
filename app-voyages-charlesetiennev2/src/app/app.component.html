@@ -1,0 +1,19 @@
+<!-- 
+  App component HTML
+  Par Charles-Etienne Villemure
+  Le 5 Decembre 2020 
+-->
+
+<app-menu></app-menu>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side">
+      <app-formulaire-recherche [(description)]="description"></app-formulaire-recherche>        
+    </mat-drawer>
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Recherche Rapide
+    </button>
+    <div>
+      <router-outlet></router-outlet>          
+    </div>
+</mat-drawer-container>
+

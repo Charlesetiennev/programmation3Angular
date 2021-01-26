@@ -1,0 +1,40 @@
+<!-- 
+    Petit forfait HTML
+    Par Charles-Etienne Villemure
+    Le 5 Decembre 2020
+ -->
+<div>
+    <div class="colone">
+        <p class="titre">Destination</p>
+            <h3>{{forfait.destination}}</h3>
+        <p class="titre">Hotel</p>
+            <h3>{{forfait.hotel.nom}}</h3>
+        <p>nombre d'etoiles : </p>
+        <div *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
+            <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
+        </div>
+    </div>
+    <div class="colone">
+        <p class="titre">Date de depart</p>
+            <h3>{{forfait.dateDepart}}</h3>
+        <p class="titre">Duree</p>
+            <h3>7 Jours</h3>
+        <p class="titre">Depart de</p>
+            <h3>{{forfait.villeDepart}}</h3>
+    </div>    
+</div>
+
+<div *ngIf="forfait.rabais > 1; then rabais else sansRabais"></div>
+    <ng-template #rabais>
+        <p class="titre">Prix</p>
+        <p class="rabaisForfaits" style="text-decoration: line-through;">{{forfait.prix}} $</p>
+            <h3 class="rabaisForfait"> {{forfait.prix - forfait.rabais}} $</h3>
+        <p class="titre">Rabais de :  <span style="color: red;">{{forfait.rabais}} $</span></p>
+    </ng-template>
+    <ng-template #sansRabais>  
+        <p class="titre">Prix</p>
+            <h3>{{forfait.prix}}$</h3>
+    </ng-template>
+
+
+

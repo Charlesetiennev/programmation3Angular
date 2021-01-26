@@ -1,0 +1,13 @@
+ul {
+  background-color: rgb(209, 166, 47);
+  margin: 0;
+  padding: 3vh 0;
+}
+li {
+  display: inline;
+}
+a {
+  margin: 0 2vh;
+  text-decoration: none;
+  color: black;
+}

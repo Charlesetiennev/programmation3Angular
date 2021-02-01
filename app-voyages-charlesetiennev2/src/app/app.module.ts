@@ -24,6 +24,7 @@ import { AProposComponent } from './apropos/apropos.component';
 import { AdministrationComponent } from './administration/administration.component';
 // Pipe
 import { ForfaitVedettePipe } from './forfait-vedette.pipe';
+import { ForfaitsCubaPipe } from './forfaits-cuba.pipe';
 // FormModule
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // Material
@@ -41,7 +42,15 @@ import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
-
+import {MatDialogModule} from '@angular/material/dialog';
+// Charts
+import { ChartsModule } from 'ng2-charts';
+import { GraphiqueRegionComponent } from './graphique-region/graphique-region.component';
+import { GraphiqueNombresVoyageursComponent } from './graphique-nombres-voyageurs/graphique-nombres-voyageurs.component';
+import { ForfaitsYComponent } from './forfaits-y/forfaits-y.component';
+import { ForfaitsTroisEtoilesPlusPipe } from './forfaits-trois-etoiles-plus.pipe';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { DialogAjoutForfaitComponent } from './dialog-ajout-forfait/dialog-ajout-forfait.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +64,14 @@ import {MatTableModule} from '@angular/material/table';
     MenuComponent,
     ForfaitsXComponent,
     AProposComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    GraphiqueRegionComponent,
+    GraphiqueNombresVoyageursComponent,
+    ForfaitsCubaPipe,
+    ForfaitsYComponent,
+    ForfaitsTroisEtoilesPlusPipe,
+    StatistiquesComponent,
+    DialogAjoutForfaitComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +94,9 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     MatSelectModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    ChartsModule
   ],
   providers: [ForfaitsService],
   bootstrap: [AppComponent]

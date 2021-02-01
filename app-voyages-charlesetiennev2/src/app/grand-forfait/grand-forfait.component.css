@@ -12,6 +12,12 @@
 }
 .colone {
   display: block;
+  margin: auto;
+  margin-bottom: 0;
+  width: 25%;
+}
+.coloneEtoiles {
+  margin-bottom: 10vh;
 }
 .etoiles {
   display: inline;

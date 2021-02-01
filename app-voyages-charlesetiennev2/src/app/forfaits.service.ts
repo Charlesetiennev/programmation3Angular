@@ -14,6 +14,7 @@ const httpOptions = {
 export class ForfaitsService {
   // NOT DEFINED
   forfaitsUrl = 'https://forfaits-voyages.herokuapp.com/api/forfaits/da/1996340';
+  forfaitDeleteUrl = "https://forfaits-voyages.herokuapp.com/api/forfaits/";
 
 
   constructor(private http: HttpClient) { }
@@ -27,9 +28,6 @@ export class ForfaitsService {
   }
   /** DELETE: suppression*/
     deleteForfait(id: string): Observable<Forfait> {
-      return this.http.delete<Forfait>(this.forfaitsUrl + id, httpOptions);
+      return this.http.delete<Forfait>(this.forfaitDeleteUrl + id, httpOptions);
   }
 }
-
-
-https://forfaits-voyages.herokuapp.com/api/forfaits/_id/6000ff360efa3fd999621bef

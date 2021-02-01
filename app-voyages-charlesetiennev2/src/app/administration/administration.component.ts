@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Forfait} from '../forfait';
 import {ForfaitsService} from '../forfaits.service';
 import {MatTable} from '@angular/material/table';  // Permet de mettre à jour les données du tableau 
-
+import {DialogAjoutForfaitComponent} from '../dialog-ajout-forfait/dialog-ajout-forfait.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-administration',
   templateUrl: './administration.component.html',
@@ -11,12 +12,13 @@ import {MatTable} from '@angular/material/table';  // Permet de mettre à jour l
 export class AdministrationComponent implements OnInit {
   columnsToDisplay = ['dateDepart','dateRetour','nom','prix','suppresion'];
   forfaits: Forfait[] ;
+  newForfait ;
 
-  constructor(private forfaitsService: ForfaitsService) { }
+  constructor(private forfaitsService: ForfaitsService, public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getForfaits();
-    console.log(this.forfaits)
+    this.newForfait = {_id : null, destination: '', villeDepart :'' , dateDepart: '', dateRetour: '', prix : 0, rabais : 0, vedette : false,}
   }
   getForfaits(): void {
     this.forfaitsService.getForfaits()
@@ -26,5 +28,11 @@ export class AdministrationComponent implements OnInit {
     this.forfaitsService.deleteForfait(forfait._id)
         .subscribe(result => this.forfaits = this.forfaits.filter(h => h !== forfait));
    }
-   
+  //  Dialog
+  openDialogNewForfait(): void {
+    const dialogRef = this.dialog.open(DialogAjoutForfaitComponent, {
+      width: '250px',
+      data: this.newForfait
+    });
+  }
 }

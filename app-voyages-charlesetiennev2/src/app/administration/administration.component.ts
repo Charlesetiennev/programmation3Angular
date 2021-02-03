@@ -12,13 +12,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class AdministrationComponent implements OnInit {
   columnsToDisplay = ['dateDepart','dateRetour','nom','prix','suppresion'];
   forfaits: Forfait[] ;
-  newForfait ;
+  newForfait: Forfait ;
 
   constructor(private forfaitsService: ForfaitsService, public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getForfaits();
-    this.newForfait = {_id : null, destination: '', villeDepart :'' , dateDepart: '', dateRetour: '', prix : 0, rabais : 0, vedette : false,}
+    // this.newForfait = {_id : null, destination: '', villeDepart :'' , dateDepart: '', dateRetour: '', prix : 0, vedette : false, da: "1996340"}
   }
   getForfaits(): void {
     this.forfaitsService.getForfaits()
@@ -31,7 +31,7 @@ export class AdministrationComponent implements OnInit {
   //  Dialog
   openDialogNewForfait(): void {
     const dialogRef = this.dialog.open(DialogAjoutForfaitComponent, {
-      width: '250px',
+      width: '75%',
       data: this.newForfait
     });
   }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+import {Reservations} from '../reservations';
+import {ReservationsService} from '../reservations.service';
 
 @Component({
   selector: 'app-statistiques',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistiques.component.css']
 })
 export class StatistiquesComponent implements OnInit {
-
-  constructor() { }
+  reservations: Reservations[];
+  constructor(private reservationsService: ReservationsService) { }
 
   ngOnInit(): void {
+    this.getReservations();
   }
-
+  getReservations(): void{
+    this.reservationsService.getReservations()
+    .subscribe(resultat => this.reservations = resultat);
+    
+  }
 }

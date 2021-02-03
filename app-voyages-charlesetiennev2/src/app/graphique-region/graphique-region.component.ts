@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { Reservations } from '../reservations';
 
 @Component({
   selector: 'app-graphique-region',
@@ -8,6 +9,10 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
   styleUrls: ['./graphique-region.component.css']
 })
 export class GraphiqueRegionComponent implements OnInit {
+   @Input() reservations: Reservations [];
+
+
+  
   // Pie
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -26,7 +31,11 @@ export class GraphiqueRegionComponent implements OnInit {
     monkeyPatchChartJsLegend();
   }
 
-  ngOnInit() {
+  ngOnInit():void {
+    this.getIdeas();
+  }
+  getIdeas():void{
+    console.log(this.reservations.length)
   }
 }
 

@@ -14,4 +14,5 @@ export interface Forfait {
     hotel : Hotel,
     vedette: boolean,
     rabais : number
+    da: string
 }

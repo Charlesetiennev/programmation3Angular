@@ -11,5 +11,4 @@ export class ForfaitVedettePipe implements PipeTransform {
   transform(forfaits: Forfait[]): Forfait[] {
     return forfaits.filter(forfait => forfait.vedette == true);
   }
-
 }

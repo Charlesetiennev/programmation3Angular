@@ -22,7 +22,7 @@ export class FormulaireForfaitComponent implements OnInit {
   options: string[] = ['Punta Cana', 'Costa Rica', 'Mexique','Cuba','Colombie','Venuzuela'];
   // Ville de depart
   myControlDeux = new FormControl();
-  optionsDeux: string[] = ['Montreal', 'Quebec', 'Vald\'or'];
+  optionsDeux: string[] = ['Montreal', 'Quebec', 'Vald\'or','Trois-Rivieres'];
   // Slider Etoiles
   formatLabel(value: number) {
     if (value >0) {

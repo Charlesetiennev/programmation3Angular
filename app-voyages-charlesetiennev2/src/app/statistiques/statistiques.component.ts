@@ -17,7 +17,10 @@ export class StatistiquesComponent implements OnInit {
   }
   getReservations(): void{
     this.reservationsService.getReservations()
-    .subscribe(resultat => this.reservations = resultat);
-    
+    .subscribe(resultat => this.reservations = resultat);   
   }
 }
+
+
+// https://angular.io/guide/inputs-outputs
+// Watching for @Input() changes

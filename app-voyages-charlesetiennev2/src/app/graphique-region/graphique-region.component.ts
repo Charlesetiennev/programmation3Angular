@@ -35,7 +35,8 @@ export class GraphiqueRegionComponent implements OnInit {
     this.getIdeas();
   }
   getIdeas():void{
-    console.log(this.reservations.length)
+    // console.log(this.reservations.length)
+    console.log(this.reservations);
   }
 }
 

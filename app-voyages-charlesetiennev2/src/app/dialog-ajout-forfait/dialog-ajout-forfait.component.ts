@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Forfait} from '../forfait';
+import {FormControl} from '@angular/forms';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -16,5 +17,7 @@ export class DialogAjoutForfaitComponent{
   onAnnulerClick(): void {
     this.dialogRef.close();
   }
-
+     // Ville de depart
+     myControlDeux = new FormControl();
+     optionsDeux: string[] = ['Montreal', 'Quebec', 'Vald\'or','Trois-Rivieres'];
 }

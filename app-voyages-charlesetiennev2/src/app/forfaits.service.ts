@@ -22,8 +22,8 @@ export class ForfaitsService {
     return this.http.get<Forfait[]>(this.forfaitsUrl);  
   }
 // Ajout Forfait
-  // addForfait(forfait: Forfait): Observable<Forfait>{
-  //   return this.http.get<Forfait[]>(this.forfaitsUrl + forfait,httpOptions)  }
+  addForfait(forfait: Forfait): Observable<Forfait>{
+    return this.http.post<Forfait>(this.forfaitDeleteUrl , forfait,httpOptions)  }
     /** PUT: mise à jour */
     updateForfait(forfait: Forfait): Observable<any> {
       const id = forfait._id;

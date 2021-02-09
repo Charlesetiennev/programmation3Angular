@@ -1,19 +1,97 @@
 <form id="forfaitAjoutForm">
     <!-- Destination -->
     <mat-form-field>
-        <input matInput [(ngModel)]="newForfait.destination"  [ngModelOptions]="{standalone: true}" placeholder="Destination"/>
+        <input matInput 
+               [(ngModel)]="newForfait.destination"  
+               [ngModelOptions]="{standalone: true}" 
+               placeholder="Destination"/>
     </mat-form-field>
     <!-- Ville de depart -->
+    <mat-form-field>
+        <input type="text"
+               placeholder="Ville de depart"
+               matInput
+               [(ngModel)]="newForfait.villeDepart"
+               [formControl]="myControlDeux"
+               [matAutocomplete]="auto1"
+               required>
+        <mat-autocomplete #auto1="matAutocomplete">
+          <mat-option *ngFor="let optionsanss of optionsDeux" [value]="optionsanss">
+            {{optionsanss}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    <!-- HOTEL -->
+    <h3>Hotel</h3>
     <!-- Nom Hotel -->
+    <mat-form-field>
+        <input matInput
+               [(ngModel)]="newForfait.hotel.nom"
+               [ngModelOptions]="{standalone: true}" 
+               placeholder="Nom Hotel"
+               required/>
+    </mat-form-field>
     <!-- coordonnees -->
+    <mat-form-field>
+        <input matInput
+               [(ngModel)]="newForfait.hotel.coordonnees"
+               [ngModelOptions]="{standalone: true}" 
+               placeholder="coordonnees de l'hotel"
+               required/>
+    </mat-form-field>
     <!-- nombreEtoiles -->
+    <mat-label>Nombre(s) etoile(s)</mat-label>
+    <mat-slider min="1" 
+                max="5" 
+                step="1" 
+                tickInterval="1"
+                aria-required="true"
+                thumbLabel [displayWith]="formatLabel"
+                [ngModelOptions]="{standalone: true}" 
+                [(ngModel)]="newForfait.hotel.nombreEtoiles">
+    </mat-slider>
     <!-- nombreChambres -->
+    <mat-form-field>
+        <mat-label>Nombre de Chambres</mat-label>
+        <input matInput 
+               [(ngModel)]="newForfait.hotel.nombreChambres"
+               [ngModelOptions]="{standalone: true}" 
+               type="number"
+               min="1" 
+               required>
+      </mat-form-field>
     <!-- caracteristiques -->
     <!-- dateDepart -->
     <!-- dateRetour -->
+    <mat-form-field>
+        <mat-label>Date de retour</mat-label>
+        <input matInput
+               [(ngModel)]="newForfait.dateRetour"
+               [ngModelOptions]="{standalone: true}" 
+               [matDatepicker]="picker2"
+               required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
     <!-- prix -->
+    <mat-form-field>
+        <mat-label>Prix</mat-label>
+        <input matInput
+               [(ngModel)]="newForfait.prix" 
+               [ngModelOptions]="{standalone: true}"
+               type="number"
+               min="0" 
+               required>
+      </mat-form-field>
     <!-- rabais -->
     <!-- vedette -->
+    <mat-form-field>
+    <mat-label>Forfait Vedette</mat-label>
+    <select matNativeControl required [(ngModel)]="newForfait.vedette" [ngModelOptions]="{standalone: true}">
+        <option [value]=true>Oui</option>
+        <option value=false>Non</option>
+    </select>
+    </mat-form-field>
 </form>
 <button mat-button [mat-dialog-close]="newForfait" cdkFocusInitial>Ok</button>
 

@@ -40,8 +40,20 @@ export class AdministrationComponent implements OnInit {
       if(result) {
         this.newForfait = result;
         console.log(this.newForfait);
+        // this.postForm.controls['isMale'].setValue(profile.isMale?'true':'false');
         this.forfaitsService.addForfait(this.newForfait)
-            .subscribe(forfait  => { this.forfaits.push(forfait); this.newForfait._id = null; this.newForfait.destination;this.newForfait.da;});
+            .subscribe(forfait  => { this.forfaits.push(forfait); 
+                                     this.newForfait._id = null; 
+                                     this.newForfait.da;
+                                     this.newForfait.destination;
+                                     
+                                     this.newForfait.prix;
+                                     this.newForfait.villeDepart;
+                                     this.newForfait.dateRetour;
+                                     this.newForfait.hotel.nom;
+                                     this.newForfait.hotel.coordonnees;
+                                     this.newForfait.hotel.nombreChambres;
+                                     this.newForfait.vedette});
       }
     });
   }

@@ -17,6 +17,14 @@ export class DialogAjoutForfaitComponent{
   onAnnulerClick(): void {
     this.dialogRef.close();
   }
+  // Slider Etoiles
+    // Slider Etoiles
+    formatLabel(value: number) {
+      if (value >0) {
+        return Math.round(value);
+      }
+      return value;
+    }
      // Ville de depart
      myControlDeux = new FormControl();
      optionsDeux: string[] = ['Montreal', 'Quebec', 'Vald\'or','Trois-Rivieres'];

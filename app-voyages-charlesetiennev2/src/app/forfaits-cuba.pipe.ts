@@ -7,7 +7,7 @@ import {Forfait} from './forfait';
 export class ForfaitsCubaPipe implements PipeTransform {
 
   transform(forfaits: Forfait[]): Forfait[] {
-    return forfaits.filter(forfait => forfait.destination == 'Cuba');
+    return forfaits.filter(forfaits => forfaits.destination == 'Cuba');
   }
 
 }

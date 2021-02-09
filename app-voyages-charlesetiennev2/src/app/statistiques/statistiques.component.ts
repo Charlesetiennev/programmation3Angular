@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
-import {Reservations} from '../reservations';
+import { Reservations } from '../reservations';
 import {ReservationsService} from '../reservations.service';
 
 @Component({
@@ -15,9 +15,9 @@ export class StatistiquesComponent implements OnInit {
   ngOnInit(): void {
     this.getReservations();
   }
-  getReservations(): void{
+  getReservations() :void{
     this.reservationsService.getReservations()
-    .subscribe(resultat => this.reservations = resultat);   
+      .subscribe(resultat => this.reservations = resultat)
   }
 }
 

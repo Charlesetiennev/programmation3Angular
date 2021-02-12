@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Forfait} from '../forfait';
 import {FormControl} from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { CARACTERISTIQUES} from '../mock-caracteristiques';
 
 @Component({
   selector: 'app-dialog-ajout-forfait',
@@ -13,6 +14,8 @@ export class DialogAjoutForfaitComponent{
 
   constructor( public dialogRef: MatDialogRef<DialogAjoutForfaitComponent>,
     @Inject(MAT_DIALOG_DATA) public newForfait: Forfait) { }
+      // Caracteristiques
+  caracteristiques : string[] = CARACTERISTIQUES;
 
   onAnnulerClick(): void {
     this.dialogRef.close();

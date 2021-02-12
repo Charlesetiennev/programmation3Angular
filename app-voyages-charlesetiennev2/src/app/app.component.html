@@ -9,8 +9,8 @@
     <mat-drawer #drawer mode="side">
       <app-formulaire-recherche [(description)]="description"></app-formulaire-recherche>        
     </mat-drawer>
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Recherche
+    <button class="buttonRecherche" type="button" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>manage_search</mat-icon>
     </button>
     <div>
       <router-outlet></router-outlet>          

@@ -1,10 +1,17 @@
+<!-- 
+    Dialog-ajout-forfait.html
+    Par Charles-Etienne Villemure
+    Le 9 Fevrier 2021
+ -->
 <form id="forfaitAjoutForm">
     <!-- Destination -->
     <mat-form-field>
-        <input matInput 
+        <input type="text"
+               placeholder="Destination"
+               matInput 
+               name="destination"
                [(ngModel)]="newForfait.destination"  
-               [ngModelOptions]="{standalone: true}" 
-               placeholder="Destination"/>
+               [ngModelOptions]="{standalone: true}" />
     </mat-form-field>
     <!-- Ville de depart -->
     <mat-form-field>
@@ -21,22 +28,78 @@
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
+      <!-- dateDepart -->
+    <mat-form-field>
+        <mat-label>Date de depart</mat-label>
+        <input matInput
+               [matDatepicker]="picker" 
+               [(ngModel)]="newForfait.dateDepart"
+               [ngModelOptions]="{standalone: true}"
+               required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    <!-- dateRetour -->
+    <mat-form-field>
+        <mat-label>Date de retour</mat-label>
+        <input matInput
+               [(ngModel)]="newForfait.dateRetour"
+               [ngModelOptions]="{standalone: true}" 
+               [matDatepicker]="picker2"
+               maxlength="10" min-view="date" auto-close="true"
+               view="date" maxlength="10" placeholder="" format="yyyy-MM-dd"
+               required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    <!-- prix -->
+    <mat-form-field>
+        <!-- <mat-label>Prix</mat-label> -->
+        <input type="number"
+               min="0"
+               placeholder="Prix"
+               matInput
+               [(ngModel)]="newForfait.prix" 
+               [ngModelOptions]="{standalone: true}"
+               required>
+    </mat-form-field>
+    <!-- rabais -->
+    <mat-form-field>
+        <!-- <mat-label>Rabais</mat-label> -->
+        <input type="number"
+               placeholder="Rabais"
+               min="0" 
+               matInput
+               [(ngModel)]="newForfait.rabais" 
+               [ngModelOptions]="{standalone: true}"
+               >
+    </mat-form-field>
+    <!-- vedette -->
+    <mat-form-field>
+        <mat-label>Forfait Vedette</mat-label>
+        <select matNativeControl required [(ngModel)]="newForfait.vedette" [ngModelOptions]="{standalone: true}">
+            <option [ngValue]="true">Oui</option>
+            <option [ngValue]="false">Non</option>
+        </select>
+        </mat-form-field>
     <!-- HOTEL -->
     <h3>Hotel</h3>
     <!-- Nom Hotel -->
     <mat-form-field>
-        <input matInput
+        <input type="text"
+               placeholder="Nom Hotel"
+               matInput
                [(ngModel)]="newForfait.hotel.nom"
                [ngModelOptions]="{standalone: true}" 
-               placeholder="Nom Hotel"
                required/>
     </mat-form-field>
     <!-- coordonnees -->
     <mat-form-field>
-        <input matInput
+        <input type="text"
+               placeholder="coordonnees de l'hotel"
+               matInput
                [(ngModel)]="newForfait.hotel.coordonnees"
                [ngModelOptions]="{standalone: true}" 
-               placeholder="coordonnees de l'hotel"
                required/>
     </mat-form-field>
     <!-- nombreEtoiles -->
@@ -53,45 +116,22 @@
     <!-- nombreChambres -->
     <mat-form-field>
         <mat-label>Nombre de Chambres</mat-label>
-        <input matInput 
+        <input type="number"
+               min="1"
+               matInput 
                [(ngModel)]="newForfait.hotel.nombreChambres"
-               [ngModelOptions]="{standalone: true}" 
-               type="number"
-               min="1" 
+               [ngModelOptions]="{standalone: true}"  
                required>
       </mat-form-field>
     <!-- caracteristiques -->
-    <!-- dateDepart -->
-    <!-- dateRetour -->
-    <mat-form-field>
-        <mat-label>Date de retour</mat-label>
-        <input matInput
-               [(ngModel)]="newForfait.dateRetour"
-               [ngModelOptions]="{standalone: true}" 
-               [matDatepicker]="picker2"
-               required>
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-datepicker #picker2></mat-datepicker>
+    <mat-form-field appearance="fill">
+        <mat-label>Caracteristiques</mat-label>
+        <mat-select multiple                
+                    [(ngModel)]="newForfait.hotel.caracteristiques"
+                    [ngModelOptions]="{standalone: true}" >
+          <mat-option *ngFor="let caracteristique of caracteristiques" [value]="caracteristique">{{caracteristique}}</mat-option>
+        </mat-select>
       </mat-form-field>
-    <!-- prix -->
-    <mat-form-field>
-        <mat-label>Prix</mat-label>
-        <input matInput
-               [(ngModel)]="newForfait.prix" 
-               [ngModelOptions]="{standalone: true}"
-               type="number"
-               min="0" 
-               required>
-      </mat-form-field>
-    <!-- rabais -->
-    <!-- vedette -->
-    <mat-form-field>
-    <mat-label>Forfait Vedette</mat-label>
-    <select matNativeControl required [(ngModel)]="newForfait.vedette" [ngModelOptions]="{standalone: true}">
-        <option [value]=true>Oui</option>
-        <option value=false>Non</option>
-    </select>
-    </mat-form-field>
 </form>
 <button mat-button [mat-dialog-close]="newForfait" cdkFocusInitial>Ok</button>
 

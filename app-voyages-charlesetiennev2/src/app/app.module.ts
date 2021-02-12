@@ -30,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // Material
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
@@ -51,6 +52,7 @@ import { ForfaitsYComponent } from './forfaits-y/forfaits-y.component';
 import { ForfaitsTroisEtoilesPlusPipe } from './forfaits-trois-etoiles-plus.pipe';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { DialogAjoutForfaitComponent } from './dialog-ajout-forfait/dialog-ajout-forfait.component';
+import { DialogModificationForfaitComponent } from './dialog-modification-forfait/dialog-modification-forfait.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,8 @@ import { DialogAjoutForfaitComponent } from './dialog-ajout-forfait/dialog-ajout
     ForfaitsYComponent,
     ForfaitsTroisEtoilesPlusPipe,
     StatistiquesComponent,
-    DialogAjoutForfaitComponent
+    DialogAjoutForfaitComponent,
+    DialogModificationForfaitComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +90,7 @@ import { DialogAjoutForfaitComponent } from './dialog-ajout-forfait/dialog-ajout
     MatDatepickerModule,
     FormsModule, 
     ReactiveFormsModule ,
+    MatButtonModule,
     MatSidenavModule,
     MatNativeDateModule,
     CommonModule,

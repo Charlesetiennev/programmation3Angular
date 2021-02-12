@@ -22,6 +22,15 @@
         <th mat-header-cell *matHeaderCellDef> Prix  </th>
         <td mat-cell *matCellDef="let forfait"> {{forfait.prix}} </td>
     </ng-container>
+    <!-- MODIFICATION -->
+    <ng-container matColumnDef="modification">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let forfait">
+            <form (ngSubmit)="onSelect(forfait)">
+                <button mat-button type="submit" (click)="openDialogEditForfait()">Modifier</button> 
+            </form>
+        </td>
+    </ng-container>
     <!-- SUPPRESSION -->
     <ng-container matColumnDef="suppresion">
         <th mat-header-cell *matHeaderCellDef></th>

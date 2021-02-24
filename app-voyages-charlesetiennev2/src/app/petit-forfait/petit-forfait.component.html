@@ -3,38 +3,54 @@
     Par Charles-Etienne Villemure
     Le 5 Decembre 2020
  -->
-<div>
+<div class="essaie">
     <div class="colone">
-        <p class="titre">Destination</p>
-            <h3>{{forfait.destination}}</h3>
-        <p class="titre">Hotel</p>
-            <h3>{{forfait.hotel.nom}}</h3>
-        <p>nombre d'etoiles : </p>
-        <div *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
+        <div>
+            <p>Destination</p>
+            <h2>{{forfait.destination}}</h2>
+            <p>Hotel</p>
+            <h2>{{forfait.hotel.nom}}</h2>
+        </div>
+        <div>
+            <p class="titre">Date de depart</p>
+            <h3>{{forfait.dateDepart | slice:0:10}}</h3>
+        </div>
+    </div>            
+    <div class="colone">
+        <div class="etoilesDiv" *ngFor="let i of [].constructor(forfait.hotel.nombreEtoiles);">
             <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
         </div>
-    </div>
-    <div class="colone">
-        <p class="titre">Date de depart</p>
-            <h3>{{forfait.dateDepart}}</h3>
-        <p class="titre">Duree</p>
-            <h3>7 Jours</h3>
-        <p class="titre">Depart de</p>
+        <div>
+            <p class="titre">Depart de</p>
             <h3>{{forfait.villeDepart}}</h3>
-    </div>    
+        </div>
+        <div>
+            <p class="titre">Duree</p>
+            <h3>7 Jours</h3>
+        </div>
+    </div>
 </div>
-
-<div *ngIf="forfait.rabais > 1; then rabais else sansRabais"></div>
+<div class="sectionPrix">
+    <div *ngIf="forfait.rabais > 1; then rabais else sansRabais"></div>
     <ng-template #rabais>
-        <p class="titre">Prix</p>
-        <p class="rabaisForfaits" style="text-decoration: line-through;">{{forfait.prix}} $</p>
-            <h3 class="rabaisForfait"> {{forfait.prix - forfait.rabais}} $</h3>
-        <p class="titre">Rabais de :  <span style="color: red;">{{forfait.rabais}} $</span></p>
+        <div class="rabais" style="padding-left: 1rem;">
+            <div>
+                <p class="titre">Prix</p>
+                <div style="display: inline-flex; align-items: center;">
+                    <p class="rabaisForfaits" style="text-decoration: line-through;">{{forfait.prix}}</p>
+                    <h3 class="rabaisForfait"> {{forfait.prix - forfait.rabais}} $</h3>
+                </div>
+            </div>
+            <div>    
+                <p class="titre">Rabais de :  <span style="color: red;">{{forfait.rabais}} $</span></p>
+            </div>
+        </div>
     </ng-template>
-    <ng-template #sansRabais>  
-        <p class="titre">Prix</p>
+    <ng-template #sansRabais>
+        <div style="padding-left: 1rem;">  
+            <p class="titre">Prix</p>
             <h3>{{forfait.prix}}$</h3>
+        </div>
     </ng-template>
-
-
-
+</div>
+   

@@ -22,10 +22,10 @@ export class FormulaireRechercheComponent implements OnInit {
     }
     return value;
   }
-  @Input() description: number;
-  @Output() descriptionChange = new EventEmitter();  
+  @Input() nombreEtoiles: number;
+  @Output() nombreEtoilesChange = new EventEmitter();  
   change(nouvelleValeur){
-    this.descriptionChange.emit(nouvelleValeur);
+    this.nombreEtoilesChange.emit(nouvelleValeur);
   }
   constructor() { }
   ngOnInit(): void {

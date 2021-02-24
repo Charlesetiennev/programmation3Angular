@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  description = 5;
+  nombreEtoiles = 1;
   title = 'app-voyages-charlesetiennev';
 }

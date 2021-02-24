@@ -26,7 +26,7 @@ export class ForfaitsService {
 // Mise a jour Forfait
     updateForfait(forfait: Forfait): Observable<any> {
       const id = forfait._id;
-      return this.http.put<Forfait>(this.forfaitsUrl + id, forfait, httpOptions);
+      return this.http.put<Forfait>(this.forfaitDeleteUrl + id, forfait, httpOptions);
   }
 // Suppression Forfait
     deleteForfait(id: string): Observable<Forfait> {

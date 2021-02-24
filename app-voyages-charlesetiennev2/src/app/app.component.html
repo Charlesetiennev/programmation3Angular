@@ -5,9 +5,10 @@
 -->
 
 <app-menu></app-menu>
+<p>{{nombreEtoiles}}</p>
 <mat-drawer-container >
     <mat-drawer #drawer mode="side">
-      <app-formulaire-recherche [(description)]="description"></app-formulaire-recherche>        
+      <app-formulaire-recherche [(nombreEtoiles)]="nombreEtoiles"></app-formulaire-recherche>        
     </mat-drawer>
     <button class="buttonRecherche" type="button" mat-icon-button (click)="drawer.toggle()">
     <mat-icon>manage_search</mat-icon>

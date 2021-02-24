@@ -66,18 +66,17 @@ export class AdministrationComponent implements OnInit {
     });
   }
   // Mise a jour
-  onSelect(forfait:Forfait):void{
+
+  openDialogEditForfait(forfait:Forfait): void {
     this.selectedForfait = forfait;
-    this.openDialogEditForfait();
-  }
-  openDialogEditForfait(): void {
     const dialogRef = this.dialog.open(DialogModificationForfaitComponent, {
       width: '50%',
       data: this.selectedForfait
     });
         dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.selectedForfait = result;
+        console.log(result)
+        this.forfaitsService.updateForfait(this.selectedForfait).subscribe(()=> this.selectedForfait = null)
       }
     });
   }

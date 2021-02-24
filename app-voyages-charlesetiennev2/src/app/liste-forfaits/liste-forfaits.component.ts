@@ -18,12 +18,10 @@ export class ListeForfaitsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getForfaits();
-    console.log(this.forfaits)
   }
   getForfaits(): void {
     this.forfaitsService.getForfaits()
         .subscribe(resultat => this.forfaits = resultat);
-        console.log(this.forfaits)
   }
 
 }

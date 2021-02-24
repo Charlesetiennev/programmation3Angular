@@ -1,6 +1,137 @@
-<p>dialog-modification-forfait works!</p>
-<!-- <p>{{selectedForfait.da}}</p> -->
-<p>{{selectedForfait}}</p>
-<p>{{selectedForfait.da}}</p>
+<form id="forfaitEditForm">
+    <!-- Destination -->
+    <mat-form-field>
+        <mat-label>Destination : </mat-label>
+        <input type="text" 
+               matInput
+               name="destination" 
+               [(ngModel)]="selectedForfait.destination"  
+               [ngModelOptions]="{standalone: true}"  
+               value="{{selectedForfait.destination}}" 
+               required>
+    </mat-form-field>
+    <!-- Ville de depart -->
+    <mat-form-field>
+        <mat-label>Ville de depart : </mat-label>
+        <input type="text" 
+               matInput
+               [(ngModel)]="selectedForfait.villeDepart"  
+               [ngModelOptions]="{standalone: true}"  
+               value="{{selectedForfait.villeDepart}}"
+               required>
+    </mat-form-field>
+    <!-- Date de depart -->
+    <mat-form-field>
+        <mat-label>Date de depart</mat-label>
+        <input matInput
+               [matDatepicker]="picker" 
+               [(ngModel)]="selectedForfait.dateDepart"
+               [ngModelOptions]="{standalone: true}"
+               value="{{selectedForfait.dateDepart}}"
+               required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    <!-- Date de retour -->
+    <mat-form-field>
+        <mat-label>Date de retour</mat-label>
+        <input matInput
+               [matDatepicker]="picker2" 
+               [(ngModel)]="selectedForfait.dateRetour"
+               [ngModelOptions]="{standalone: true}"
+               value="{{selectedForfait.dateRetour}}"
+               required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    <!-- Prix -->
+    <mat-form-field>
+        <mat-label>Prix</mat-label>
+        <input type="number"
+               min="0"
+               placeholder="Prix"
+               matInput
+               [(ngModel)]="selectedForfait.prix" 
+               [ngModelOptions]="{standalone: true}"
+               value="{{selectedForfait.prix}}"
+               required>
+    </mat-form-field>
+    <!-- Rabais -->
+    <mat-form-field>
+        <mat-label>Rabais</mat-label>
+        <input type="number"
+               placeholder="Rabais"
+               min="0" 
+               matInput
+               [(ngModel)]="selectedForfait.rabais" 
+               [ngModelOptions]="{standalone: true}"
+               value="{{selectedForfait.rabais}}"
+               >
+    </mat-form-field>    
+    <!-- Vedette -->
+    <mat-form-field>
+        <mat-label>Forfait Vedette</mat-label>
+        <select matNativeControl value="{{selectedForfait.vedette}}" required [(ngModel)]="selectedForfait.vedette" [ngModelOptions]="{standalone: true}">
+            <option [ngValue]="true">Oui</option>
+            <option [ngValue]="false">Non</option>
+        </select>
+        </mat-form-field>    
+<!-- HOTEL -->
+<h1>Hotel</h1>
+    <!-- Nom Hotel -->
+    <mat-form-field>
+        <mat-label>Nom : </mat-label>
+        <input type="text" 
+               matInput
+               [(ngModel)]="selectedForfait.hotel.nom"  
+               [ngModelOptions]="{standalone: true}"  
+               value="{{selectedForfait.hotel.nom}}"
+               required>
+    </mat-form-field>
+    <!-- Coordonnees -->
+    <mat-form-field>
+        <mat-label>Coordonnees : </mat-label>
+        <input type="text"
+               matInput
+               [(ngModel)]="selectedForfait.hotel.coordonnees"
+               [ngModelOptions]="{standalone: true}"
+               value="{{selectedForfait.hotel.coordonnees}}" 
+               required/>
+    </mat-form-field>
+    <!-- Etoiles -->
+    <mat-label>Nombre(s) etoile(s)</mat-label>
+    <mat-slider min="1" 
+                max="5" 
+                step="1" 
+                tickInterval="1"
+                aria-required="true"
+                thumbLabel [displayWith]="formatLabel"
+                [ngModelOptions]="{standalone: true}" 
+                [(ngModel)]="selectedForfait.hotel.nombreEtoiles"
+                value="{{selectedForfait.hotel.nombreEtoiles}}">
+    </mat-slider>
+    <!-- Nombres de chambres -->
+    <mat-form-field>
+        <mat-label>Nombre de Chambres</mat-label>
+        <input type="number"
+               min="1"
+               matInput 
+               [(ngModel)]="selectedForfait.hotel.nombreChambres"
+               [ngModelOptions]="{standalone: true}"  
+               required
+               value="{{selectedForfait.hotel.nombreChambres}}">
+      </mat-form-field>
+    <!-- Caracteristiques -->
+    <mat-form-field>
+        <mat-label>Caracteristiques</mat-label>
+        <mat-select multiple                
+                    [(ngModel)]="selectedForfait.hotel.caracteristiques"
+                    [ngModelOptions]="{standalone: true}" 
+                    >
+          <mat-option *ngFor="let caracteristique of caracteristiques" [value]="caracteristique">{{caracteristique}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+</form>
 
-<button mat-button [mat-dialog-close]="modificationForfait" cdkFocusInitial>Ok</button>
+
+<button mat-button [mat-dialog-close]="selectedForfait" cdkFocusInitial>Ok</button>

@@ -22,5 +22,14 @@ export class DialogModificationForfaitComponent{
   onAnnulerClick(): void {
     this.dialogRef.close();
   }
-
+  // Caracteristiques
+  caracteristiques : string[] = CARACTERISTIQUES;
+  // Slider Etoiles
+    // Slider Etoiles
+    formatLabel(value: number) {
+      if (value >0) {
+        return Math.round(value);
+      }
+      return value;
+    }
 }

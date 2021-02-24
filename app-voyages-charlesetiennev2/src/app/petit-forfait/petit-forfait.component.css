@@ -3,18 +3,26 @@
   Par Charles-Etienne Villemure
   Le 5 Decembre 2020 
 */
-.titre {
-  margin-bottom: 0;
-}
+
+h2,
 h3 {
-  font-size: large;
+  margin: 0;
+  font-weight: bold;
 }
 .rabaisForfait {
   margin-bottom: 0;
 }
-div {
+.etoilesDiv {
   display: inline-flex;
 }
 .colone {
-  display: block;
+  padding-left: 1rem;
+}
+.essaie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  margin-bottom: 0;
 }

@@ -80,6 +80,7 @@ import { DialogModificationForfaitComponent } from './dialog-modification-forfai
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatSliderModule,

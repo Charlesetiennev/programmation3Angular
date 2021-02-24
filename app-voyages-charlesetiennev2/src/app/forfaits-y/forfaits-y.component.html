@@ -1,4 +1,5 @@
-<p>forfaits 3 etoiles et plus </p>
 <div *ngFor="let forfait of forfaits | forfaitsTroisEtoilesPlus">
-    <app-grand-forfait [forfait]=forfait></app-grand-forfait>
+    <mat-list>
+        <app-grand-forfait [forfait]=forfait></app-grand-forfait>
+    </mat-list>
 </div>

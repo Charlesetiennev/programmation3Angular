@@ -32,6 +32,8 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+          <!-- Datepicker Essaie -->
+
     <!-- Date de retour -->
     <mat-form-field>
         <mat-label>Date de retour</mat-label>
@@ -39,7 +41,6 @@
                [matDatepicker]="picker2" 
                [(ngModel)]="selectedForfait.dateRetour"
                [ngModelOptions]="{standalone: true}"
-               value="{{selectedForfait.dateRetour}}"
                required>
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>

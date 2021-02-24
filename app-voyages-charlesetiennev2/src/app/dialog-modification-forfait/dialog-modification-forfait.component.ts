@@ -4,6 +4,7 @@ import {Forfait} from '../forfait';
 import {FormControl} from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { CARACTERISTIQUES} from '../mock-caracteristiques';
+import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-dialog-modification-forfait',
@@ -32,4 +33,10 @@ export class DialogModificationForfaitComponent{
       }
       return value;
     }
+    events: string[] = [];
+
+    addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+      this.events.push(`${type}: ${event.value}`);
+    }
+
 }

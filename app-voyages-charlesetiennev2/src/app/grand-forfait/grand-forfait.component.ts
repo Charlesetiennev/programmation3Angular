@@ -13,14 +13,15 @@ import {Forfait} from '../forfait';
 export class GrandForfaitComponent implements OnInit {
 // @Input() description : number;
 @Input() forfait: Forfait;
-dureeVoyage : string;
+
   constructor() { }
 
   ngOnInit(): void {
-    let dateDepart: any = new Date(this.forfait.dateDepart);
-    let dateRetour: any = new Date(this.forfait.dateRetour);
-    var diffDays:any = Math.floor((dateRetour - dateDepart) / (1000 * 60 * 60 * 24));
-      console.log(diffDays)
-    diffDays = this.dureeVoyage;
+  };
+  dureeDuVoyage(dateDepart,dateRetour){
+    let dateDeDepart : any = new Date (dateDepart);
+    let dateDeRetour : any = new Date (dateRetour);
+    let difference = Math.round(Math.abs((dateDeRetour.getTime() - dateDeDepart.getTime())/(1000*3600*24)));
+    return difference;
   };
 }

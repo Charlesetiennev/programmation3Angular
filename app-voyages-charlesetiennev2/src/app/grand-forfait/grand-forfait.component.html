@@ -16,8 +16,7 @@
     </div>
     <div class="colone">
         <p class="titre">duree</p>
-            <h3>7 jours</h3>
-            <h3>{{dureeVoyage}}</h3>
+            <h3>{{dureeDuVoyage(forfait.dateDepart,forfait.dateRetour)}} Jours </h3>
         <p class="titre">Date de depart</p>
             <h3>{{forfait.dateDepart | slice:0:10}}</h3>
         <p class="titre">Date de retour</p>

@@ -15,5 +15,10 @@ export class PetitForfaitComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  dureeDuVoyage(dateDepart,dateRetour){
+    let dateDeDepart : any = new Date (dateDepart);
+    let dateDeRetour : any = new Date (dateRetour);
+    let difference = Math.round(Math.abs((dateDeRetour.getTime() - dateDeDepart.getTime())/(1000*3600*24)));
+    return difference;
+  };
 }

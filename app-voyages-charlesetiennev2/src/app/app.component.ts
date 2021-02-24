@@ -10,6 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nombreEtoiles = 1;
+  nombreEtoiles = undefined;
   title = 'app-voyages-charlesetiennev';
 }

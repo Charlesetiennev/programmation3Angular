@@ -12,7 +12,7 @@ import {ForfaitsService} from '../forfaits.service';
   styleUrls: ['./liste-forfaits.component.css']
 })
 export class ListeForfaitsComponent implements OnInit {
-  @Input() description: number;
+  @Input() nombreEtoiles: number;
   forfaits: Forfait[] ;
   constructor(private forfaitsService: ForfaitsService) { }
 

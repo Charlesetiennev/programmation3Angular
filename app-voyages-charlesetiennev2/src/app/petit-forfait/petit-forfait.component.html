@@ -13,7 +13,7 @@
         </div>
         <div>
             <p class="titre">Date de depart</p>
-            <h3>{{forfait.dateDepart | slice:0:10}}</h3>
+            <h3>{{forfait.dateDepart | date:'longDate' : 'fr'}}</h3>
         </div>
     </div>            
     <div class="colone">

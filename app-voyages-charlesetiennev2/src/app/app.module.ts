@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 // Francais
+import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
@@ -107,7 +108,8 @@ import { DialogModificationForfaitComponent } from './dialog-modification-forfai
     MatDialogModule,
     ChartsModule
   ],
-  providers: [ForfaitsService],
+  providers: [ForfaitsService,
+    {provide: LOCALE_ID, useValue: 'fr-FR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

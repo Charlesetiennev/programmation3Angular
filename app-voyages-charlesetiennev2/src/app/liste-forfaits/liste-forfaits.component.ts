@@ -1,6 +1,6 @@
 // Liste forfait TS
 // Par Charles-Etienne Villemure
-// Le 5 Decembre 2020
+// Le 24 Fevrier 2021
 
 import { Component, OnInit, Input } from '@angular/core';
 import {Forfait} from '../forfait';

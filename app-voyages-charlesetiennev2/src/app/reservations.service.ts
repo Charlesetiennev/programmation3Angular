@@ -1,3 +1,6 @@
+// Reservation.service
+// Par Charles-Etienne Villemure
+// Le 24 Fevrier 2021
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Reservations} from './reservations';

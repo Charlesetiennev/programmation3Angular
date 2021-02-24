@@ -1,6 +1,6 @@
 // App module
 // Par Charles-Etienne Villemure
-// Le 5 Decembre 2020
+// Le 24 Fevrier 2021
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

@@ -3,7 +3,7 @@
     Par Charles-Etienne Villemure
     Le 9 Fevrier 2021
  -->
-<form id="forfaitAjoutForm">
+<form id="forfaitAjoutForm" [formGroup]="form">
     <!-- Destination -->
     <mat-form-field>
         <input type="text"
@@ -15,6 +15,7 @@
                minlength="2"
                maxlength="50"
                #destination="ngModel"
+               id="destination"
                required/>
         <mat-error *ngIf="destination.invalid && (destination.dirty || destination.touched) && 
             destination.hasError('required')">La destination est obligatoire.</mat-error>

@@ -1,3 +1,6 @@
+// Forfait.service
+// Par Charles-Etienne Villemure
+// Le 24 Fevrier 2021
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Forfait} from './forfait';
@@ -13,7 +16,7 @@ const httpOptions = {
 })
 export class ForfaitsService {
   forfaitsUrl = 'https://forfaits-voyages.herokuapp.com/api/forfaits/da/1996340';
-  forfaitDeleteUrl = "https://forfaits-voyages.herokuapp.com/api/forfaits/";
+  forfaitCRUDUrl = "https://forfaits-voyages.herokuapp.com/api/forfaits/";
 
 
   constructor(private http: HttpClient) { }
@@ -22,14 +25,14 @@ export class ForfaitsService {
   }
 // Ajout Forfait
   addForfait(forfait: Forfait): Observable<Forfait>{
-    return this.http.post<Forfait>(this.forfaitDeleteUrl , forfait,httpOptions)  }
+    return this.http.post<Forfait>(this.forfaitCRUDUrl , forfait,httpOptions)  }
 // Mise a jour Forfait
     updateForfait(forfait: Forfait): Observable<any> {
       const id = forfait._id;
-      return this.http.put<Forfait>(this.forfaitDeleteUrl + id, forfait, httpOptions);
+      return this.http.put<Forfait>(this.forfaitCRUDUrl + id, forfait, httpOptions);
   }
 // Suppression Forfait
     deleteForfait(id: string): Observable<Forfait> {
-      return this.http.delete<Forfait>(this.forfaitDeleteUrl + id, httpOptions);
+      return this.http.delete<Forfait>(this.forfaitCRUDUrl + id, httpOptions);
   }
 }

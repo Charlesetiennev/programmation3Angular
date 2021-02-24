@@ -1,6 +1,6 @@
 // Mock-duree-sejour
 // Par Charles-Etienne Villemure
-// Le 5 Decembre 2020
+// Le 24 Fevrier 2021
 
 import {DureeSejour} from './duree-sejour';
 

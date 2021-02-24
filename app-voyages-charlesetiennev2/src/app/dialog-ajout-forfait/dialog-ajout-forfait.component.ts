@@ -1,8 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Forfait} from '../forfait';
-import {FormBuilder, FormControl} from '@angular/forms';
-import { NgForm } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validator, Validators, NgForm} from '@angular/forms';
 import { CARACTERISTIQUES} from '../mock-caracteristiques';
 
 @Component({
@@ -13,13 +12,20 @@ import { CARACTERISTIQUES} from '../mock-caracteristiques';
 export class DialogAjoutForfaitComponent{
 
   constructor( public dialogRef: MatDialogRef<DialogAjoutForfaitComponent>,
-    @Inject(MAT_DIALOG_DATA) public newForfait: Forfait) { }
-      // Caracteristiques
+    @Inject(MAT_DIALOG_DATA) public newForfait: Forfait,
+    private formBuilder: FormBuilder) { }
+  // Caracteristiques
   caracteristiques : string[] = CARACTERISTIQUES;
   onAnnulerClick(): void {
     this.dialogRef.close();
   }
-  // Slider Etoiles
+// Formulaire Validation
+form : FormGroup
+ngOnInit(){
+this.form = this.formBuilder.group({
+  destination: [null, [Validators.required]]
+})
+};
     // Slider Etoiles
     formatLabel(value: number) {
       if (value >0) {

@@ -1,7 +1,10 @@
+// Administration.ts 
+// Par Charles-Etienne Villemure
+// Le 24 Fevrier 2021
 import { Component, OnInit } from '@angular/core';
 import { Forfait } from '../forfait';
 import { ForfaitsService } from '../forfaits.service';
-import { MatTable } from '@angular/material/table';  // Permet de mettre à jour les données du tableau 
+import { MatTable } from '@angular/material/table';
 import { DialogAjoutForfaitComponent } from '../dialog-ajout-forfait/dialog-ajout-forfait.component';
 import {DialogModificationForfaitComponent} from '../dialog-modification-forfait/dialog-modification-forfait.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -39,7 +42,6 @@ export class AdministrationComponent implements OnInit {
       width: '75%',
       data: this.newForfait
     });
-
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.newForfait = result;
@@ -66,7 +68,6 @@ export class AdministrationComponent implements OnInit {
     });
   }
   // Mise a jour
-
   openDialogEditForfait(forfait:Forfait): void {
     this.selectedForfait = forfait;
     const dialogRef = this.dialog.open(DialogModificationForfaitComponent, {
@@ -75,7 +76,6 @@ export class AdministrationComponent implements OnInit {
     });
         dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result)
         this.forfaitsService.updateForfait(this.selectedForfait).subscribe(()=> this.selectedForfait = null)
       }
     });
@@ -85,5 +85,4 @@ export class AdministrationComponent implements OnInit {
     this.forfaitsService.deleteForfait(forfait._id)
       .subscribe(result => this.forfaits = this.forfaits.filter(h => h !== forfait));
   }
-
 }

@@ -1,7 +1,7 @@
 /* 
   Petit forfait CSS
   Par Charles-Etienne Villemure
-  Le 5 Decembre 2020 
+  Le 24 Fevrier 2021 
 */
 
 h2,
@@ -18,7 +18,7 @@ h3 {
 .colone {
   padding-left: 1rem;
 }
-.essaie {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;

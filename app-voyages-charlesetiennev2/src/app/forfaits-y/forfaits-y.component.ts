@@ -1,3 +1,6 @@
+// Forfait-y.ts
+// Par Charles-Etienne Villemure
+// Le 24 Fevrier 2021
 import { Component, OnInit } from '@angular/core';
 import {Forfait} from '../forfait';
 import {ForfaitsService} from '../forfaits.service';
@@ -14,11 +17,9 @@ export class ForfaitsYComponent implements OnInit {
 
   ngOnInit(): void {
     this.getForfaits();
-    console.log(this.forfaits)
   }
   getForfaits(): void {
     this.forfaitsService.getForfaits()
         .subscribe(resultat => this.forfaits = resultat);
-        console.log(this.forfaits)
   }
 }

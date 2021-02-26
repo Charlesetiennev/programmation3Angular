@@ -1,22 +1,13 @@
 <!-- 
   App component HTML
   Par Charles-Etienne Villemure
-  Le 5 Decembre 2020 
+  Le 25 Fevrier 2021 
 -->
 
 <app-menu></app-menu>
-<p>{{nombreEtoiles}}</p>
-<mat-drawer-container >
-    <mat-drawer #drawer mode="side">
-      <app-formulaire-recherche [(nombreEtoiles)]="nombreEtoiles"></app-formulaire-recherche>        
-    </mat-drawer>
-    <button class="buttonRecherche" type="button" mat-icon-button (click)="drawer.toggle()">
-    <mat-icon>manage_search</mat-icon>
-    </button>
     <div>
       <router-outlet></router-outlet>          
     </div>
-</mat-drawer-container>
-<!-- <app-formulaire-forfait></app-formulaire-forfait> -->
+
 
 

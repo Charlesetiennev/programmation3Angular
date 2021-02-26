@@ -1,10 +1,11 @@
 /* 
   A Propos.css
   Par Charles-Etienne Villemure
-  Le 24 Fevrier 2021
+  Le 26 Fevrier 2021
 */
 div {
   height: 90vh;
+  padding-top: 10vh;
 }
 p {
   padding: 0 15vh;

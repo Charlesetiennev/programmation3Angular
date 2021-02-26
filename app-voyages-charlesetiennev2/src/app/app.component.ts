@@ -1,6 +1,6 @@
 // App component
 // Par Charles-Etienne Villemure
-// Le 5 Decembre 2020
+// Le 25 Fevrier 2021
 
 import { Component } from '@angular/core';
 
@@ -10,6 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  nombreEtoiles = undefined;
   title = 'app-voyages-charlesetiennev';
 }

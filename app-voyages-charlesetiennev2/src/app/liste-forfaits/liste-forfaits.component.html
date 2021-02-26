@@ -3,13 +3,22 @@
     Par Charles-Etienne Villemure
     Le 5 Decembre 2020 
 -->
-<mat-grid-list cols="4" rowHeight="2:2">    
-    <div class="petitForfait" *ngFor="let forfait of forfaits | forfaitVedette">
-        <mat-grid-tile>
-            <app-petit-forfait [forfait]=forfait></app-petit-forfait>
-        </mat-grid-tile>
-    </div>
-</mat-grid-list>
-<mat-list class="grandForfait" *ngFor="let forfait of forfaits">
-        <app-grand-forfait [forfait]=forfait></app-grand-forfait>  
-</mat-list>
+<mat-drawer-container >
+    <mat-drawer #drawer mode="side">
+        <app-formulaire-recherche [(nombreEtoiles)]="nombreEtoiles"></app-formulaire-recherche>        
+    </mat-drawer>
+      <button class="buttonRecherche" type="button" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>manage_search</mat-icon>
+      </button>
+      <p>{{nombreEtoiles}}</p>
+    <mat-grid-list cols="4" rowHeight="2:2">    
+        <div class="petitForfait" *ngFor="let forfait of forfaits | forfaitVedette">
+            <mat-grid-tile>
+                <app-petit-forfait [forfait]=forfait></app-petit-forfait>
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+    <mat-list class="grandForfait" *ngFor="let forfait of forfaits">
+        <app-grand-forfait *ngIf="nombreEtoiles == null" [forfait]=forfait></app-grand-forfait>  
+    </mat-list>
+</mat-drawer-container>

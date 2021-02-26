@@ -1,7 +1,7 @@
 <!-- 
     Grand forfait HTML
     Par Charles-Etienne Villemure
-    Le 24 Fevrier 2021
+    Le 25 Fevrier 2021
  -->
 <mat-list-item style="height: auto; width: auto;" [ngClass]="{'favori': forfait.vedette ===true}">
 
@@ -30,7 +30,7 @@
             <p class="titre">Prix</p>
             <p class="rabaisForfait" style="text-decoration: line-through;">{{forfait.prix}} $</p>
                 <h3 class="rabaisForfait"> {{forfait.prix - forfait.rabais}} $</h3>
-            <p class="titre">Rabais de :  {{forfait.rabais}} $</p>
+            <p class="titre">Rabais de :  <span style="color: red;">{{forfait.rabais}} $</span></p>
         </ng-template>
         <ng-template #sansRabais>  
             <p class="titre">Prix</p>

@@ -58,6 +58,7 @@ import { ForfaitsTroisEtoilesPlusPipe } from './forfaits-trois-etoiles-plus.pipe
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { DialogAjoutForfaitComponent } from './dialog-ajout-forfait/dialog-ajout-forfait.component';
 import { DialogModificationForfaitComponent } from './dialog-modification-forfait/dialog-modification-forfait.component';
+import { FilterEtoilesPipe } from './filter-etoiles.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import { DialogModificationForfaitComponent } from './dialog-modification-forfai
     ForfaitsTroisEtoilesPlusPipe,
     StatistiquesComponent,
     DialogAjoutForfaitComponent,
-    DialogModificationForfaitComponent
+    DialogModificationForfaitComponent,
+    FilterEtoilesPipe
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
+<!-- dialog-modification-forfait.html -->
+<!-- Par Charles-Etienne Villemure -->
+<!-- Le 26 Fevrier 2021 -->
 <form id="forfaitEditForm">
     <!-- Destination -->
     <mat-form-field>
@@ -12,7 +15,7 @@
     </mat-form-field>
     <!-- Ville de depart -->
     <mat-form-field>
-        <mat-label>Ville de depart : </mat-label>
+        <mat-label>Ville de départ : </mat-label>
         <input type="text" 
                matInput
                [(ngModel)]="selectedForfait.villeDepart"  
@@ -22,7 +25,7 @@
     </mat-form-field>
     <!-- Date de depart -->
     <mat-form-field>
-        <mat-label>Date de depart</mat-label>
+        <mat-label>Date de départ</mat-label>
         <input matInput
                [matDatepicker]="picker" 
                [(ngModel)]="selectedForfait.dateDepart"
@@ -32,8 +35,6 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-          <!-- Datepicker Essaie -->
-
     <!-- Date de retour -->
     <mat-form-field>
         <mat-label>Date de retour</mat-label>
@@ -78,7 +79,7 @@
         </select>
         </mat-form-field>    
 <!-- HOTEL -->
-<h1>Hotel</h1>
+<h1>Hôtel</h1>
     <!-- Nom Hotel -->
     <mat-form-field>
         <mat-label>Nom : </mat-label>
@@ -91,7 +92,7 @@
     </mat-form-field>
     <!-- Coordonnees -->
     <mat-form-field>
-        <mat-label>Coordonnees : </mat-label>
+        <mat-label>Coordonnées : </mat-label>
         <input type="text"
                matInput
                [(ngModel)]="selectedForfait.hotel.coordonnees"
@@ -100,7 +101,7 @@
                required/>
     </mat-form-field>
     <!-- Etoiles -->
-    <mat-label>Nombre(s) etoile(s)</mat-label>
+    <mat-label>Nombre(s) étoile(s)</mat-label>
     <mat-slider min="1" 
                 max="5" 
                 step="1" 
@@ -124,7 +125,7 @@
       </mat-form-field>
     <!-- Caracteristiques -->
     <mat-form-field>
-        <mat-label>Caracteristiques</mat-label>
+        <mat-label>Caractéristiques</mat-label>
         <mat-select multiple                
                     [(ngModel)]="selectedForfait.hotel.caracteristiques"
                     [ngModelOptions]="{standalone: true}" 
@@ -135,4 +136,4 @@
 </form>
 
 
-<button mat-button [mat-dialog-close]="selectedForfait" cdkFocusInitial>Ok</button>
+<button mat-button [mat-dialog-close]="selectedForfait" cdkFocusInitial>Terminer</button>

@@ -1,18 +1,18 @@
 <!-- 
     Petit forfait HTML
     Par Charles-Etienne Villemure
-    Le 24 Fevrier 2021
+    Le 26 Fevrier 2021
  -->
 <div class="container">
     <div class="colone">
         <div>
             <p>Destination</p>
             <h2>{{forfait.destination}}</h2>
-            <p>Hotel</p>
+            <p>Hôtel</p>
             <h2>{{forfait.hotel.nom}}</h2>
         </div>
         <div>
-            <p class="titre">Date de depart</p>
+            <p class="titre">Date de départ</p>
             <h3>{{forfait.dateDepart | date:'longDate' : 'fr'}}</h3>
         </div>
     </div>            
@@ -21,11 +21,11 @@
             <app-nombre-etoiles  [forfait]=forfait></app-nombre-etoiles>
         </div>
         <div>
-            <p class="titre">Depart de</p>
+            <p class="titre">Départ de</p>
             <h3>{{forfait.villeDepart}}</h3>
         </div>
         <div>
-            <p class="titre">Duree</p>
+            <p class="titre">Durée</p>
             <h3>{{dureeDuVoyage(forfait.dateDepart,forfait.dateRetour)}} Jours </h3>
         </div>
     </div>

@@ -1,3 +1,7 @@
+// dialog-ajout-forfait.ts 
+// Par Charles-Etienne Villemure
+// Le 26 Fevrier 2021
+
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Forfait} from '../forfait';
@@ -35,5 +39,5 @@ this.form = this.formBuilder.group({
     }
      // Ville de depart
      myControlDeux = new FormControl();
-     optionsDeux: string[] = ['Montreal', 'Quebec', 'Vald\'or','Trois-Rivieres'];
+     optionsDeux: string[] = ['Montréal', 'Québec', 'Vald\'or','Trois-Rivières'];
 }

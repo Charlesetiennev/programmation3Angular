@@ -1,3 +1,7 @@
+// graphique-region.ts 
+// Par Charles-Etienne Villemure
+// Le 4 Mars 2021
+
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
